@@ -35,7 +35,7 @@ class EmployeServiceTest {
 		
 		@Test
 		@Order(1)
-		void testAjouterEmploye() {
+		public void testAjouterEmploye() {
 			Employe employe = new Employe("aze", "kh", "aalop", true, Role.ADMINISTRATEUR);
 			Employe employe2 = new Employe("axxx", "ggg", "aalop", true, Role.ADMINISTRATEUR);
 			Employe employe1 = new Employe("qqqq", "rrrr", "kwala", true, Role.CHEF_DEPARTEMENT);
@@ -47,27 +47,27 @@ class EmployeServiceTest {
 
 		@Test
 		@Order(2)
-		void testMettreAjourEmailByEmployeId() {
+		public void testMettreAjourEmailByEmployeId() {
 			assertNotEquals(0, employeService.mettreAjourEmailByEmployeId("test5@gmail.com", 2));
 		}
 
 		@Test
 		@Order(3)
-		void testGetAllEmployes() {
+		public void testGetAllEmployes() {
 			assertNotEquals(0, employeService.getAllEmployes().size());
 
 		}
 
 		@Test
 		@Order(5)
-		void testDeleteEmployeById() {
+		public void testDeleteEmployeById() {
 			assertNotEquals(0, employeService.deleteEmployeById(1));
 
 		}
 
 		@Test
 		@Order(4)
-		void testgetEmployePrenomById() {
+		public void testgetEmployePrenomById() {
 			assertNotNull(employeService.getEmployePrenomById(2));
 		}
 			
