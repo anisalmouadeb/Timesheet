@@ -48,7 +48,7 @@ public class EmployeServiceImpl implements IEmployeService {
 	public int ajouterEmploye(Employe employe) {
 		try {
 			employeRepository.save(employe);
-			l.info(employe.toString());
+			l.info("Employee added  : {} .", employe);
 			return employe.getId();
 
 		} catch (Exception e) {
@@ -67,7 +67,8 @@ public class EmployeServiceImpl implements IEmployeService {
 				Employe employe = employeManagedEntity.get();
 				employe.setEmail(email);
 				employeRepository.save(employe);
-				l.info("Employe Updated: " + employe);
+				l.info("Employee Updated  : {} .", employe);
+
 				return employeId;
 
 			} else {
@@ -109,8 +110,9 @@ public class EmployeServiceImpl implements IEmployeService {
 
 				deptRepoistory.save(department);
 
-				l.info("departement affected " + department);
-				l.info("employee affected " + employe);
+				l.info("departement affected  : {} .", department);
+				l.info("employee affected  : {} .", employe);
+
 				return employeId ;
 
 			}
