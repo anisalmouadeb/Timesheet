@@ -5,10 +5,10 @@ import static org.junit.Assert.assertNotNull;
 
 
 
-import org.junit.Test;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.annotation.Order;
 
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Role;
@@ -28,14 +28,15 @@ class EmployeServiceTest {
 		@Autowired
 		IEmployeService employeService;
 		
-		
+		@Autowired
+		private IEmployeService iEmployeService;
 		@Autowired
 		IEntrepriseService ientrepriseservice;
 
 		
 		@Test
 		@Order(1)
-		public void testAjouterEmploye() {
+		void testAjouterEmploye() {
 			Employe employe = new Employe("aze", "kh", "aalop", true, Role.ADMINISTRATEUR);
 			Employe employe2 = new Employe("axxx", "ggg", "aalop", true, Role.ADMINISTRATEUR);
 			Employe employe1 = new Employe("qqqq", "rrrr", "kwala", true, Role.CHEF_DEPARTEMENT);
@@ -47,27 +48,27 @@ class EmployeServiceTest {
 
 		@Test
 		@Order(2)
-		public void testMettreAjourEmailByEmployeId() {
+		void testMettreAjourEmailByEmployeId() {
 			assertNotEquals(0, employeService.mettreAjourEmailByEmployeId("test5@gmail.com", 2));
 		}
 
 		@Test
 		@Order(3)
-		public void testGetAllEmployes() {
+		void testGetAllEmployes() {
 			assertNotEquals(0, employeService.getAllEmployes().size());
 
 		}
 
 		@Test
 		@Order(5)
-		public void testDeleteEmployeById() {
+		void testDeleteEmployeById() {
 			assertNotEquals(0, employeService.deleteEmployeById(1));
 
 		}
 
 		@Test
 		@Order(4)
-		public void testgetEmployePrenomById() {
+		void testgetEmployePrenomById() {
 			assertNotNull(employeService.getEmployePrenomById(2));
 		}
 			
