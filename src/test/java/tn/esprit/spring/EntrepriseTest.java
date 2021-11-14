@@ -25,7 +25,7 @@ import tn.esprit.spring.services.IEntrepriseService;
 public class EntrepriseTest {
 
 	
-	private static final Logger l = LogManager.getLogger(EntrepriseServiceImpl.class);
+	private static final Logger l = LogManager.getLogger(EntrepriseTest.class);
 	
 	@Autowired
 	IEntrepriseService eS;
@@ -36,13 +36,10 @@ public class EntrepriseTest {
 	@Autowired
 	DepartementRepository dR;
 	
-	private Entreprise e;
-	private Departement d;
-	
 	@Before
 	public void setUp() {
-		e = eR.save(new Entreprise("BluePrint", "Unity"));
-		d = dR.save(new Departement("TIC"));
+		Entreprise e = eR.save(new Entreprise("BluePrint", "Unity"));
+		 Departement d = dR.save(new Departement("TIC"));
 		d.setEntreprise(e);
 		dR.save(d);
 }
@@ -58,11 +55,11 @@ public class EntrepriseTest {
 	public void testAjouterDepartement() {
 		Departement dep = new Departement("GRH");
 		long startTime = System.nanoTime();
-		int Id = eS.ajouterDepartement(dep);
+		int id = eS.ajouterDepartement(dep);
 		long stopTime = System.nanoTime();
         double elapsedTimeInSecond = (double) (stopTime - startTime) / 1_000_000_000;
         l.log(Level.INFO, () -> "Temps necessaire pour l'ajout d'un départelent : " + elapsedTimeInSecond +" seconds");
-		Optional<Departement> departement = dR.findById(Id);
+		Optional<Departement> departement = dR.findById(id);
 		if(departement.isPresent()) {
 			String name= departement.get().getName();
 			assertEquals("GRH", name);
