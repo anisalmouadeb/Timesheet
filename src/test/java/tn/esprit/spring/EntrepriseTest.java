@@ -61,12 +61,28 @@ public class EntrepriseTest {
 		int Id = eS.ajouterDepartement(dep);
 		long stopTime = System.nanoTime();
         double elapsedTimeInSecond = (double) (stopTime - startTime) / 1_000_000_000;
-        l.log(Level.INFO, () -> "Execution time of AjouterDepartement : " + elapsedTimeInSecond +" seconds");
+        l.log(Level.INFO, () -> "Temps necessaire pour l'ajout d'un départelent : " + elapsedTimeInSecond +" seconds");
 		Optional<Departement> departement = dR.findById(Id);
 		if(departement.isPresent()) {
 			String name= departement.get().getName();
 			assertEquals("GRH", name);
 		}
 		
+	}
+	
+	@Test
+	public void  testajouterEntreprise(){
+		Entreprise ent= new Entreprise ("entreprise1","entreprise1");
+		long startTime = System.nanoTime();
+		int id= eS.ajouterEntreprise(ent); 
+		long stopTime = System.nanoTime();
+		double elapsedTimeInSecond = (double) (stopTime - startTime) / 1_000_000_000;
+        l.log(Level.INFO, () -> "Temps necessaire pour l'ajout d'une entreprise : " + elapsedTimeInSecond +" seconds");
+        Optional<Entreprise> entr = eR.findById(id);
+        if(entr.isPresent()) {
+			String name= entr.get().getName();
+			assertEquals("entreprise1", name);
+        }
+	   
 	}
 }
