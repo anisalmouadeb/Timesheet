@@ -14,20 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
-import tn.esprit.spring.services.IEmployeService;
 import tn.esprit.spring.services.IEntrepriseService;
-import tn.esprit.spring.services.ITimesheetService;
 
 @RestController
 public class RestControlEntreprise {
 
-	
-	@Autowired
-	IEmployeService iemployeservice;
 	@Autowired
 	IEntrepriseService ientrepriseservice;
-	@Autowired
-	ITimesheetService itimesheetservice;
 	
 	// Ajouter Entreprise : http://localhost:8081/SpringMVC/servlet/ajouterEntreprise
 	//{"id":1,"name":"SSII Consulting","raisonSocial":"Cite El Ghazela"}
