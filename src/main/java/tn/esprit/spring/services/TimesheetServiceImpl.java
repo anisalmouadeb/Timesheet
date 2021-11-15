@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import tn.esprit.spring.TimesheetTest;
+
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Mission;
@@ -97,7 +97,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 			}
 		}
 		if(!chefDeLaMission){
-			l.info("l'employe doit etre chef de departement de la mission en question");
+			System.out.println("l'employe doit etre chef de departement de la mission en question");
 			return;
 		}
 //
@@ -107,7 +107,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		timesheetRepository.save(timesheet);
 		//Comment Lire une date de la base de données
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		l.info("dateDebut : " + dateFormat.format(timesheet.getTimesheetPK().getDateDebut()));
+		System.out.println("dateDebut : " + dateFormat.format(timesheet.getTimesheetPK().getDateDebut()));
 		
 	}	
 		
