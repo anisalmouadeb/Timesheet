@@ -472,3 +472,49 @@
 2021-11-15 13:55:20.859  INFO 37284 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-11-15 13:55:20.863  INFO 37284 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-11-15 13:55:20.878  INFO 37284 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-15 14:01:11.582  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : Starting TimesheetTest on LAPTOP-9VH91A8L with PID 36752 (started by anism in C:\Users\anism\OneDrive\Bureau\5SAE3\devops\Continuous-Integration-Project-Timesheet\Timesheet-spring-boot-core-data-jpa-mvc-REST-1)
+2021-11-15 14:01:11.586  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : No active profile set, falling back to default profiles: default
+2021-11-15 14:01:13.061  INFO 36752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-11-15 14:01:13.229  INFO 36752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 150ms. Found 6 repository interfaces.
+2021-11-15 14:01:13.941  INFO 36752 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4e615e1e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-15 14:01:14.345  INFO 36752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-15 14:01:14.769  INFO 36752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-15 14:01:14.893  INFO 36752 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-11-15 14:01:15.021  INFO 36752 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-11-15 14:01:15.023  INFO 36752 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-11-15 14:01:15.354  INFO 36752 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-11-15 14:01:16.220  INFO 36752 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-15 14:01:17.980  INFO 36752 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-15 14:01:18.733  INFO 36752 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-11-15 14:01:20.855  INFO 36752 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-15 14:01:21.210  WARN 36752 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-15 14:01:21.953  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : Started TimesheetTest in 10.857 seconds (JVM running for 12.494)
+2021-11-15 14:01:22.248  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : employe added with id :396
+2021-11-15 14:01:22.321  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : mission added with id :690
+2021-11-15 14:01:22.471  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : mission added with id :691
+2021-11-15 14:01:22.777  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : mission affecter a departement
+2021-11-15 14:01:22.843  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : mission affecter a departement
+2021-11-15 14:01:22.881  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet added : employe 396mission 690
+2021-11-15 14:01:23.370  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet valider : employe 396mission 690
+2021-11-15 14:01:23.384  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet added : employe 396mission 691
+2021-11-15 14:01:23.522  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet valider : employe 396mission 691
+2021-11-15 14:01:23.689  WARN 36752 --- [main] tn.esprit.spring.TimesheetTest           : warning check your method
+2021-11-15 14:01:23.791  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : employe added with id :397
+2021-11-15 14:01:23.800  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : employe added with id :398
+2021-11-15 14:01:23.807  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : mission added with id :692
+2021-11-15 14:01:23.931  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : mission affecter a departement
+2021-11-15 14:01:23.976  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet added : employe 397mission 692
+2021-11-15 14:01:24.118  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet valider : employe 397mission 692
+2021-11-15 14:01:24.126  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet added : employe 398mission 692
+2021-11-15 14:01:24.188  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : timesheet valider : employe 398mission 692
+2021-11-15 14:01:24.196  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : employes founded
+2021-11-15 14:01:24.206  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : mission added
+2021-11-15 14:01:24.211  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : departement created and added
+2021-11-15 14:01:24.238  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : Mission found
+2021-11-15 14:01:24.248  INFO 36752 --- [main] tn.esprit.spring.TimesheetTest           : Mission added
+2021-11-15 14:01:24.321  INFO 36752 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-11-15 14:01:24.324  INFO 36752 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-15 14:01:24.328  INFO 36752 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-15 14:01:24.336  INFO 36752 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
