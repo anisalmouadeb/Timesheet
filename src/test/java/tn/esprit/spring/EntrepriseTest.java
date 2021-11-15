@@ -74,7 +74,7 @@ public class EntrepriseTest {
 		int id= eS.ajouterEntreprise(ent); 
 		long stopTime = System.nanoTime();
 		double elapsedTimeInSecond = (double) (stopTime - startTime) / 1_000_000_000;
-        l.log(Level.INFO, () -> "maked time : " + elapsedTimeInSecond +" seconds");
+        l.log(Level.INFO, () -> "maked time : " + elapsedTimeInSecond +"  total l en seconde seconds");
         Optional<Entreprise> entr = eR.findById(id);
         if(entr.isPresent()) {
 			String name= entr.get().getName();
