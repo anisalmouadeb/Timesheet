@@ -1,6 +1,7 @@
 package tn.esprit.spring.services;
 
 import java.text.SimpleDateFormat;
+import java.util.Optional;
 import java.util.Date;
 import java.util.List;
 
@@ -39,10 +40,13 @@ public class TimesheetServiceImpl implements ITimesheetService {
     
 	
 	public void affecterMissionADepartement(int missionId, int depId) {
-		Mission mission = missionRepository.findById(missionId).get();
-		Departement dep = deptRepoistory.findById(depId).get();
-		mission.setDepartement(dep);
-		missionRepository.save(mission);
+		Optional <Mission> mission = missionRepository.findById(missionId);
+		Optional <Departement> department = deptRepoistory.findById(depId);
+		Mission m =mission.get();
+		Departement dep =department.get();
+
+		m.setDepartement(dep);
+		missionRepository.save(m);
 		
 	}
 
@@ -63,9 +67,12 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	
 	public void validerTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin, int validateurId) {
 		System.out.println("In valider Timesheet");
-		Employe validateur = employeRepository.findById(validateurId).get();
-		Mission mission = missionRepository.findById(missionId).get();
+		Optional<Employe> validateuro = employeRepository.findById(validateurId);
+		Optional<Mission> missiono = missionRepository.findById(missionId);
 		//verifier s'il est un chef de departement (interet des enum)
+		Mission mission =missiono.get();
+		Employe validateur= validateuro.get();
+		
 		if(!validateur.getRole().equals(Role.CHEF_DEPARTEMENT)){
 			System.out.println("l'employe doit etre chef de departement pour valider une feuille de temps !");
 			return;
