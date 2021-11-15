@@ -87,10 +87,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 				Employe validateur= validateuro.get();
 				
 
-				if(!validateur.getRole().equals(Role.CHEF_DEPARTEMENT)){
-					System.out.println("l'employe doit etre chef de departement pour valider une feuille de temps !");
-					return;
-				}
+				
 				//verifier s'il est le chef de departement de la mission en question
 				boolean chefDeLaMission = false;
 				for(Departement dep : validateur.getDepartements()){
@@ -99,11 +96,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 						break;
 					}
 				}
-				if(!chefDeLaMission){
-					System.out.println("l'employe doit etre chef de departement de la mission en question");
-					return;
-				}
-		//
+			
 				TimesheetPK timesheetPK = new TimesheetPK(missionId, employeId, dateDebut, dateFin);
 				Timesheet timesheet =timesheetRepository.findBytimesheetPK(timesheetPK);
 				timesheet.setValide(true);
