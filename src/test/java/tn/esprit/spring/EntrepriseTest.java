@@ -1,6 +1,7 @@
 package tn.esprit.spring;
 
 import static org.junit.Assert.*;
+import org.junit.Assert;
 import java.util.Optional;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +18,6 @@ import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
-import tn.esprit.spring.services.EntrepriseServiceImpl;
 import tn.esprit.spring.services.IEntrepriseService;
 
 @RunWith(SpringRunner.class)
@@ -81,5 +81,16 @@ public class EntrepriseTest {
 			assertEquals("entreprise1", name);
         }
 	   
+	}
+	
+	@Test
+	public void testDeleteEntrepriseById()
+	{
+		Entreprise e= new Entreprise("entreprise2","entreprise2");
+		int i= eS.ajouterEntreprise(e);
+		int id = 46;
+		l.info("suppiminiiiiiiiiiiiiiii");
+		Assert.assertEquals(i, id);
+		eS.deleteEntrepriseById(id);
 	}
 }
