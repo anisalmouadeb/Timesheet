@@ -104,7 +104,16 @@ public class EntrepriseTest {
 		l.log(Level.INFO, () -> "Execution time of getAllDepartementsNamesByEntreprise : " +elapsedTimeInSecond+" seconds");
 		assertEquals(1, names.size());
 	}
-
+	
+	/*@Test
+	public void testGetEntrepriseById()
+	{
+		int id = 30;
+		int id_entreprise = entreprise.getId();
+		Assert.assertEquals(id_entreprise, id);
+		entrepriseService.getEntrepriseById(id);
+		
+	}*/
 	
 	
 	
