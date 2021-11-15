@@ -70,33 +70,49 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		Optional<Employe> validateuro = employeRepository.findById(validateurId);
 		Optional<Mission> missiono = missionRepository.findById(missionId);
 		//verifier s'il est un chef de departement (interet des enum)
-		Mission mission =missiono.get();
-		Employe validateur= validateuro.get();
-		
-		if(!validateur.getRole().equals(Role.CHEF_DEPARTEMENT)){
-			System.out.println("l'employe doit etre chef de departement pour valider une feuille de temps !");
-			return;
-		}
-		//verifier s'il est le chef de departement de la mission en question
-		boolean chefDeLaMission = false;
-		for(Departement dep : validateur.getDepartements()){
-			if(dep.getId() == mission.getDepartement().getId()){
-				chefDeLaMission = true;
-				break;
+		if(missiono.isPresent())
+		{
+			Mission mission =missiono.get();
+			if(validateuro.isPresent())
+			{
+				Employe validateur= validateuro.get();
+				
+
+				if(!validateur.getRole().equals(Role.CHEF_DEPARTEMENT)){
+					System.out.println("l'employe doit etre chef de departement pour valider une feuille de temps !");
+					return;
+				}
+				//verifier s'il est le chef de departement de la mission en question
+				boolean chefDeLaMission = false;
+				for(Departement dep : validateur.getDepartements()){
+					if(dep.getId() == mission.getDepartement().getId()){
+						chefDeLaMission = true;
+						break;
+					}
+				}
+				if(!chefDeLaMission){
+					System.out.println("l'employe doit etre chef de departement de la mission en question");
+					return;
+				}
+		//
+				TimesheetPK timesheetPK = new TimesheetPK(missionId, employeId, dateDebut, dateFin);
+				Timesheet timesheet =timesheetRepository.findBytimesheetPK(timesheetPK);
+				timesheet.setValide(true);
+				timesheetRepository.save(timesheet);
+				//Comment Lire une date de la base de données
+				SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+				System.out.println("dateDebut : " + dateFormat.format(timesheet.getTimesheetPK().getDateDebut()));
+				
+				
+				
+				
+				
+				
 			}
 		}
-		if(!chefDeLaMission){
-			System.out.println("l'employe doit etre chef de departement de la mission en question");
-			return;
-		}
-//
-		TimesheetPK timesheetPK = new TimesheetPK(missionId, employeId, dateDebut, dateFin);
-		Timesheet timesheet =timesheetRepository.findBytimesheetPK(timesheetPK);
-		timesheet.setValide(true);
-		timesheetRepository.save(timesheet);
-		//Comment Lire une date de la base de données
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		System.out.println("dateDebut : " + dateFormat.format(timesheet.getTimesheetPK().getDateDebut()));
+		
+		
+		
 		
 	}
 
