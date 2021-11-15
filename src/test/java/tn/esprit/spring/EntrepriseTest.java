@@ -74,7 +74,7 @@ public class EntrepriseTest {
 		int id= eS.ajouterEntreprise(ent); 
 		long stopTime = System.nanoTime();
 		double elapsedTimeInSecond = (double) (stopTime - startTime) / 1_000_000_000;
-        l.log(Level.INFO, () -> "Temps necessaire pour l'ajout d'une entreprise : " + elapsedTimeInSecond +" seconds");
+        l.log(Level.INFO, () -> "maked time : " + elapsedTimeInSecond +" seconds");
         Optional<Entreprise> entr = eR.findById(id);
         if(entr.isPresent()) {
 			String name= entr.get().getName();
@@ -82,7 +82,7 @@ public class EntrepriseTest {
         }
 	   
 	}
-	
+	/*
 	@Test
 	public void testDeleteEntrepriseById()
 	{
@@ -92,5 +92,5 @@ public class EntrepriseTest {
 		l.info("suppiminiiiiiiiiiiiiiii");
 		Assert.assertEquals(i, id);
 		eS.deleteEntrepriseById(id);
-	}
+	}*/
 }
