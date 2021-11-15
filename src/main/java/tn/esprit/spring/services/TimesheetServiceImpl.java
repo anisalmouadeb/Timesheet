@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import tn.esprit.spring.TimesheetTest;
 import tn.esprit.spring.entities.Departement;
@@ -26,7 +26,7 @@ import tn.esprit.spring.repository.TimesheetRepository;
 @Service
 public class TimesheetServiceImpl implements ITimesheetService {
 	
-	private static final Logger l = LogManager.getLogger(TimesheetTest.class);
+	private static final Logger l = LogManager.getLogger(TimesheetServiceImpl.class);
 
 	@Autowired
 	MissionRepository missionRepository;
