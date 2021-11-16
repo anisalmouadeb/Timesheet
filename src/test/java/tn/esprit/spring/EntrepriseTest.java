@@ -39,7 +39,7 @@ public class EntrepriseTest {
 	@Before
 	public void setUp() {
 		Entreprise e = eR.save(new Entreprise("BluePrint", "Unity"));
-		 Departement d = dR.save(new Departement("TIC"));
+		 Departement d = dR.save(new Departement("GRH"));
 		d.setEntreprise(e);
 		dR.save(d);
 }
