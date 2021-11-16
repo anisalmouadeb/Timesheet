@@ -1,7 +1,6 @@
 package tn.esprit.spring;
 
 import static org.junit.Assert.*;
-import org.junit.Assert;
 import java.util.Optional;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -89,7 +88,7 @@ public class EntrepriseTest {
 		Entreprise e= new Entreprise("entreprise2","entreprise2");
 		int i= eS.ajouterEntreprise(e);
 		int id = 46;
-		l.info("suppiminiiiiiiiiiiiiiii");
+		l.info("suppression efféctuée avec succés");
 		Assert.assertEquals(i, id);
 		eS.deleteEntrepriseById(id);
 	}*/
